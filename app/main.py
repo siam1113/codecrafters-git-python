@@ -25,9 +25,6 @@ def print_blob(blob_sha: str) -> None:
         sys.stdout.buffer.write(content)
 
 def main():
-    # You can use print statements as follows for debugging, they'll be visible when running tests.
-    print("Logs from your program will appear here!")
-    
     command = sys.argv[1]
     if command == "init":
         init()
