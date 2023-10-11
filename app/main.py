@@ -22,7 +22,7 @@ def print_blob(blob_sha: str) -> None:
     with open(path, "rb") as f:
         file = zlib.decompress(f.read())
         _, content = file.split(b"\x00", maxsplit=1)
-        print(content.decode())
+        sys.stdout.buffer.write(content)
 
 def main():
     # You can use print statements as follows for debugging, they'll be visible when running tests.
