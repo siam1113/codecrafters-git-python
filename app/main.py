@@ -21,7 +21,7 @@ def print_blob(blob_sha: str) -> None:
     path = f".git/objects/{blob_sha[0:2]}/{blob_sha[2:]}"
     with open(path, "rb") as f:
         file = zlib.decompress(f.read())
-        _, content = file.split("\x00")
+        _, content = file.split(b"\x00", maxsplit=1)
         print(content.decode())
 
 def main():
