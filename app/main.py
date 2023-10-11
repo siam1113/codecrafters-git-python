@@ -15,7 +15,7 @@ def init():
 
 def cat_file(option: str, blob_sha: str) -> str:
     if option == "-p":
-        return zlib.decompress(open(f".git/objects/{blob_sha[0:2]}/{blob_sha[2:]}").read()).decode()
+        print_blob(blob_sha)
 
 def print_blob(blob_sha: str) -> None:
     path = f".git/objects/{blob_sha[0:2]}/{blob_sha[2:]}"
